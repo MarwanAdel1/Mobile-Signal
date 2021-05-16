@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/statistics_item"
+        android:icon="@drawable/chart"
+        android:title="Statistics"/>
+
+    <item
+        android:id="@+id/coverage_item"
+        android:icon="@drawable/maps"
+        android:title="Coverage"/>
+
+    <item
+        android:id="@+id/cell_location_item"
+        android:icon="@drawable/tower"
+        android:title="Nearest Cell Tower"/>
+
+</menu>

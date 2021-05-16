@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:gauge="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.StatisticsActivity">
+
+
+    <de.nitri.gauge.Gauge
+        android:id="@+id/gauge"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="50dp"
+        android:layout_weight="3"
+        gauge:initialValue="-120"
+        gauge:maxValue="-40"
+        gauge:minValue="-130"
+        gauge:needleShadow="true"
+        gauge:totalNicks="90"
+        gauge:valuePerNick="1" />
+
+    <TextView
+        android:id="@+id/signal_text"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight="3"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/map"
+        android:layout_gravity="center"
+        android:text="Map"
+        android:layout_width="wrap_content"
+        android:layout_weight="1"
+        android:layout_height="0dp"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation_id"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:itemBackground="@color/bottom_navigation_color"
+        app:menu="@menu/navigation_menu"
+        app:theme="@style/BottomNavigationTheme" />
+
+
+</LinearLayout>
