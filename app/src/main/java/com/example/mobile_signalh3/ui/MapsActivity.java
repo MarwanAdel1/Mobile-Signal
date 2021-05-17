@@ -17,10 +17,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.PolygonOptions;
-import com.uber.h3core.H3Core;
-import com.uber.h3core.util.GeoCoord;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
@@ -29,7 +26,7 @@ import static android.Manifest.permission.READ_PHONE_STATE;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
     private GoogleMap mMap;
-    SignalViewModel mSignalViewModel;
+    AppViewModel mAppViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,9 +45,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         checkPermission();
         mMap.setMyLocationEnabled(true);
 
-        mSignalViewModel = ViewModelProviders.of(this).get(SignalViewModel.class);
+        mAppViewModel = ViewModelProviders.of(this).get(AppViewModel.class);
 
-        mSignalViewModel.getSignals(new FirebaseCallBacks() {
+        mAppViewModel.getSignals(new FirebaseCallBacks() {
             @Override
             public void onCallback(List<SignalData> signalList) {
                 Drawing drawing = new Drawing();
@@ -60,7 +57,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         });
 
-        mSignalViewModel.mSignalMutableLiveData.observe(this, new Observer<List<SignalData>>() {
+        mAppViewModel.mSignalMutableLiveData.observe(this, new Observer<List<SignalData>>() {
             @Override
             public void onChanged(List<SignalData> signalList) {
                 Drawing drawing = new Drawing();
