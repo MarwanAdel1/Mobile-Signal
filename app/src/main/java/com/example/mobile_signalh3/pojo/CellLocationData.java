@@ -4,6 +4,15 @@ public class CellLocationData {
     private double lat;
     private double lon;
     private double range;
+    private long time;
+
+    public long getTime() {
+        return time;
+    }
+
+    public void setTime(long time) {
+        this.time = time;
+    }
 
     public double getRange() {
         return range;

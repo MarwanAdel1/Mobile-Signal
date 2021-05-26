@@ -3,6 +3,7 @@ package com.example.mobile_signalh3.data;
 import android.util.Log;
 
 import com.example.mobile_signalh3.pojo.CellLocationData;
+import com.example.mobile_signalh3.pojo.CellLocationResponse;
 
 import java.util.List;
 
@@ -31,8 +32,8 @@ public class ClientSide {
         return INSTANCE;
     }
 
-    public Call<CellLocationData> getCellLocation(/*int mcc, int mnc, int lac, int cellid*/) {
-        Call<CellLocationData> call = mCellLocationInterface.getCellLocation(/*mcc,mnc,lac,cellid*/);
+    public Call<CellLocationResponse> getCellLocation(int mcc, int mnc, int lac, int cellid) {
+        Call<CellLocationResponse> call = mCellLocationInterface.getCellLocation(mcc,mnc,lac,cellid);
         return call;
     }
 }

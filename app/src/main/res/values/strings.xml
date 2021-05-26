@@ -1,6 +1,16 @@
 <resources>
     <string name="app_name">Mobile-Signal H3</string>
     <string name="title_activity_maps">Map</string>
+    <string name="title_activity_cell_towers_maps">Map</string>
+    <string name="cell_towers">Cell Towers</string>
+    <string name="arrow">Arrow</string>
+    <string name="follow_the">Follow the</string>
+    <string name="unknown">Unknown</string>
+    <string name="operator">Operator</string>
+    <string name="find_signal">Find Signal</string>
+    <string name="coverage">Coverage</string>
+    <string name="nearest_cell_tower">Nearest Cell Tower</string>
+    <string name="statistics">Statistics</string>
     <!-- TODO: Remove or change this placeholder text -->
 
 </resources>

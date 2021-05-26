@@ -1,17 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.CompassActivity">
+    android:orientation="vertical"
+    tools:context=".ui.fragments.CompassFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/find_signal"
+        android:textSize="30sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/black" />
+
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:src="@drawable/cell_signal_logo" />
+
+        <LinearLayout
+            android:layout_weight="3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:text="@string/operator" />
+
+            <TextView
+                android:id="@+id/operator_name_compass"
+                android:layout_weight="2"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:text="@string/unknown" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:src="@drawable/mobile_signal" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/black" />
+
+    <TextView
+        android:layout_marginStart="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/follow_the"
+        android:textSize="20sp" />
+
+    <TextView
+        android:layout_marginStart="10dp"
+        android:textSize="30sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/arrow" />
 
     <ImageView
         android:id="@+id/compass"
-        android:layout_width="320dp"
         android:layout_height="320dp"
-        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_margin="50dp"
         android:scaleType="centerCrop"
         android:src="@drawable/compass1" />
+
+    <Button
+        android:id="@+id/cell_towers_map_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:text="@string/cell_towers"
+        android:textSize="20sp" />
 
 </LinearLayout>

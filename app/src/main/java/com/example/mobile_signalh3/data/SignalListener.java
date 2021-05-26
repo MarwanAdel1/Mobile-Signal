@@ -2,6 +2,7 @@ package com.example.mobile_signalh3.data;
 
 import android.telephony.PhoneStateListener;
 import android.telephony.SignalStrength;
+import android.util.Log;
 
 public class SignalListener extends PhoneStateListener {
     private String resultedSignal;
@@ -21,7 +22,6 @@ public class SignalListener extends PhoneStateListener {
 
         if (signalStrength.getCellSignalStrengths().size() >0){
             signalLevel = signalStrength.getCellSignalStrengths().get(0).getDbm();
-
             if (signalLevel < -120 || signalLevel > -50) {
                 resultedSignal = "Dead";
             } else if (signalLevel >= -120 && signalLevel <= -110) {
@@ -38,6 +38,5 @@ public class SignalListener extends PhoneStateListener {
         }else {
             resultedSignal = "Unknown";
         }
-
     }
 }

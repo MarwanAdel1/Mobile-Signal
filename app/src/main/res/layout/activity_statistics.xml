@@ -1,66 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:gauge="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.StatisticsActivity">
+    tools:context=".ui.fragments.StatisticsFragments">
 
-
-    <de.nitri.gauge.Gauge
-        android:id="@+id/gauge"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="50dp"
-        android:layout_weight="3"
-        gauge:initialValue="-120"
-        gauge:maxValue="-40"
-        gauge:minValue="-130"
-        gauge:needleShadow="true"
-        gauge:totalNicks="90"
-        gauge:valuePerNick="1" />
-
-    <TextView
-        android:id="@+id/signal_text"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_gravity="center"
-        android:layout_weight="3"
-        android:textSize="30sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context=".ui.fragments.StatisticsFragments">
 
-        <Button
-            android:id="@+id/map"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+
+        <de.nitri.gauge.Gauge
+            android:id="@+id/gauge"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_weight="4"
+            gauge:initialValue="-120"
+            gauge:maxValue="-40"
+            gauge:minValue="-130"
+            gauge:needleShadow="true"
+            gauge:totalNicks="90"
+            gauge:valuePerNick="1" />
+
+        <TextView
+            android:id="@+id/signal_text"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:text="Coverage" />
-
-        <Button
-            android:id="@+id/compassbt"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:text="Nearest Cell" />
+            android:textSize="30sp" />
 
     </LinearLayout>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation_id"
+    <View
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        app:itemBackground="@color/bottom_navigation_color"
-        app:menu="@menu/navigation_menu"
-        app:theme="@style/BottomNavigationTheme" />
+        android:layout_height="5dp"
+        android:background="@color/black" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
 
+
+
+
+    </LinearLayout>
 </LinearLayout>

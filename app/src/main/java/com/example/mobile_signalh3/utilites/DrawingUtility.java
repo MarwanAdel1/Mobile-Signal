@@ -1,19 +1,17 @@
-package com.example.mobile_signalh3.ui;
+package com.example.mobile_signalh3.utilites;
 
-import android.graphics.Color;
 import android.util.Log;
 
 import com.example.mobile_signalh3.pojo.SignalData;
-import com.example.mobile_signalh3.ui.MapsActivity;
+import com.example.mobile_signalh3.ui.fragments.SignalMapFragment;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.PolygonOptions;
 import com.uber.h3core.H3Core;
 import com.uber.h3core.util.GeoCoord;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Drawing {
+public class DrawingUtility {
     private List<List<LatLng>> mdrawList;
     private List<String> msignalLevel;
 
@@ -25,7 +23,7 @@ public class Drawing {
         return msignalLevel;
     }
 
-    public Drawing draw(List<SignalData> signalList, int res) {
+    public DrawingUtility draw(List<SignalData> signalList, int res) {
         List<List<LatLng>> drawList = new ArrayList<>();
         List<String> signalLevel = new ArrayList<>();
         List<List<Integer>> averageSignal = new ArrayList<>();
@@ -73,11 +71,11 @@ public class Drawing {
         msignalLevel = signalLevel;
         mdrawList = drawList;
 
-        Drawing mDrawing = new Drawing();
-        mDrawing.msignalLevel = signalLevel;
-        mDrawing.mdrawList = drawList;
+        DrawingUtility mDrawingUtility = new DrawingUtility();
+        mDrawingUtility.msignalLevel = signalLevel;
+        mDrawingUtility.mdrawList = drawList;
 
-        return mDrawing;
+        return mDrawingUtility;
 
     }
 
@@ -140,7 +138,7 @@ public class Drawing {
             average = sum / oldList.get(i).size();
             newList.add(convertSignalLevelToSignalStr(average));
         }
-        Log.e(MapsActivity.class.getSimpleName(), "Oops Crash : \nSize  = " + newList.size() + "\n" + newList.toString());
+        Log.e(SignalMapFragment.class.getSimpleName(), "Oops Crash : \nSize  = " + newList.size() + "\n" + newList.toString());
         return newList;
     }
 }
